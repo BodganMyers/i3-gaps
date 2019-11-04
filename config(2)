@@ -1,0 +1,20 @@
+general {
+
+        interval = 5 
+}
+
+order += "disk /"
+order += "disk /home"
+order += "time"
+
+time {
+        format = "%Y-%m-%d %H:%M "
+}
+
+disk "/" {
+        format = "%free"
+}
+
+disk "/home" {
+        format = "%free"
+}
