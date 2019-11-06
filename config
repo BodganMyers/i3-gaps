@@ -1,6 +1,8 @@
 
 set $mod Mod4
 
+font pango:monospace 8
+
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
@@ -237,6 +239,9 @@ bindsym $mod+Shift+o exec urxvt -e ranger
 
 #autoexec
 
-exec --no-startup-id i3-msg 'workspace 1; exec urxvt'
-exec --no-startup-id i3-msg 'workspace 1; exec urxvt -e ranger'
-exec --no-startup-id i3-msg 'workspace 2; exec google-chrome-stable'
+exec --no-startup-id i3-msg 'workspace $ws1; exec urxvt'
+exec --no-startup-id i3-msg 'workspace $ws1; exec urxvt -e ranger'
+
+#autoexec2 
+assign [class="^Google-chrome$"] → 2
+exec google-chrome-stable
